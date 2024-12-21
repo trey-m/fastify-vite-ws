@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import useSocket from '../hooks/useSocket';
 import Navbar from '../components/Navbar';
 
