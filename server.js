@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import FastifyVite from '@fastify/vite';
 import FastifyWebsocket from '@fastify/websocket';
+import API from './server/index.js';
 
 const server = Fastify({
   logger: {
@@ -24,5 +25,7 @@ server.get('/ws', { websocket: true }, (socket /* WebSocket */, req /* FastifyRe
     socket.send('hi from server');
   });
 });
+
+server.register(API);
 
 await server.listen({ port: 3000 });
